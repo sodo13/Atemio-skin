@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<!--
+	##################### mmark_A4Y_ATEMIO v.1.3.4 ########################
+	#                                                                     #
+	#      mmark	      Version 1.3.4 released           10-09-2014     #
+	#                                                                     #
+	#######################################################################
+		The Atemio4you skin has been build for Atemio 4you STB's by MMARK.
+		This skin is Freeware. Everyone can modify and use it in other images.
+		BUT DO NOT REMOVE OR CHANGE THIS HEADER !!!
+		Do whatever you want with this skin, but don't tell it's yours, 
+		or your idea, and leave the credentials in the "About-box" as they are
+	-->
+
+	<!-- ********** AutoTimer ********** -->
+
+	<!-- AutoTimer -->
+	<screen name="AutoTimer" title="Auto Timer" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRGYB"/>
+		<widget name="config" position="40,90" size="560,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P001" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="AutoTimerServiceEditor" title="Edit AutoTimer Services" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRGYB"/>
+		<widget name="config" position="40,90" size="560,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P002" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- Auto Timer -->
+	<screen name="AutoTimerOverview" title="AutoTimer Overview" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sGBY"/>
+		<widget name="entries" position="40,90" size="560,510" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap pixmap="buttons/key_menu.png" position="1175,27" zPosition="2" size="50,40" alphatest="blend"/>
+		<ePixmap position="870,500" size="300,300" pixmap="menu/timer.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P003" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- dont saw this screen, may be later -->
+	<screen name="AutoTimerOverviewSummary" title="AutoTimer Overview Summary" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget source="parent.Title" render="Label" position="40,25" size="580,24" font="Regular;20" backgroundColor="bkwall" transparent="1"/>
+		<widget source="entry" render="Label" position="40,90" size="560,24" font="Regular;20" backgroundColor="bkwall" transparent="1"/>
+		<widget source="global.CurrentTime" render="Label" position="40,120" size="82,18" font="Regular;16" backgroundColor="bkwall" transparent="1">
+			<convert type="ClockToText">WithSeconds</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P004" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoTimer Help -->
+	<screen name="AutoTimerHelp" title="AutoTimer Help" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRYB"/>
+		<widget render="Label" source="title" position="40,80" size="585,60" zPosition="5" valign="center" halign="center" font="Regular;26" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="detailtext" font="Regular;22" position="40,150" size="585,460" halign="center" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="870,500" size="300,300" pixmap="menu/info.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P005" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoTimer Import -->
+	<screen name="AutoTimerImporter" title="Import AutoTimer" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRG"/>
+		<widget name="list" position="40,80" size="585,450" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P006" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoTimer Wizard -->
+	<screen name="AutoTimerWizard" title="AutoTimer Wizard" position="fill" flags="wfNoBorder">
+		<panel name="sWallTemplate"/>
+		<widget source="global.CurrentTime" render="Label" position="1103,28" size="140,60" font="Regular; 50" halign="left" backgroundColor="bkwall" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="931,37" size="161,27" font="Regular; 15" halign="right" foregroundColor="#808080" backgroundColor="bkwall" transparent="1">
+			<convert type="ClockToText">Format:%A</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="931,60" size="161,29" font="Regular; 16" halign="right" foregroundColor="#808080" backgroundColor="bkwall" transparent="1">
+			<convert type="ClockToText">Format:%e. %b</convert>
+		</widget>
+		<widget name="text" position="40,90" size="720,260" font="Regular;22" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+
+		<widget source="list" render="Listbox" position="40,240" size="720,220" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1">
+			<convert type="StringList"/>
+		</widget>
+		<widget name="config" position="40,240" size="720,220" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="1120,110" size="154,500" alphatest="blend" zPosition="10"/>
+		<widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" alphatest="blend" zPosition="11"/>
+		<widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" alphatest="blend" zPosition="11"/>
+		<widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" size="37,70" alphatest="blend" zPosition="11"/>
+		<widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" size="37,70" alphatest="blend" zPosition="11"/>
+		<widget name="wizard" pixmap="menu/wizard.png" position="840,430" size="300,300" alphatest="blend" zPosition="10" transparent="1" />
+		<ePixmap position="60,665" pixmap="buttons/red.png" size="30,40" alphatest="blend"/>
+		<widget name="languagetext" position="90,663" size="210,24" font="Regular;21" backgroundColor="bkwall" transparent="1"/>
+		<widget name="HelpWindow" pixmap="buttons/key_text.png" position="80,440" zPosition="1" size="1,1" transparent="1" alphatest="on"/>
+		<widget source="VKeyIcon" render="Pixmap" pixmap="buttons/key_text.png" position="80,410" zPosition="1" size="60,25" transparent="1" alphatest="on">
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P007" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoTimer Setting -->
+	<screen name="AutoTimerSettings" title="AutoTimer Settings" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRG"/>
+		<widget name="config" position="40,90" size="585,504" itemHeight="28" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall"/>
+		<widget source="help" render="Label" position="680,470" size="560,140" transparent="1" font="Regular;20" valign="bottom" halign="center" foregroundColor="#73c6ff" backgroundColor="bkwall"/>
+		<!-- eLabel name="DEBUG" text="PANEL P008" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoTimer Preview -->
+	<screen name="AutoTimerPreview" title="Preview AutoTimer" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRY"/>
+		<widget source="timerlist" render="Listbox" position="40,90" size="585,510" enableWrapAround="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos=( 10,5),size=(595,26),text = 3,font = 0,flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+					MultiContentEntryText(pos=( 10,32),size=(595,24),text = 0,font = 1,flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+					MultiContentEntryText(pos=( 10,57),size=(310,24),text = 4,font = 1,flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+					MultiContentEntryText(pos=(330,57),size=(240,24),text = 2,font = 1,flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER),
+					],
+					"fonts": [gFont("Regular",22),gFont("Regular",20)],
+					"itemHeight": 85
+				}
+			</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P009" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoTimer Editor -->
+	<screen name="AutoTimerEditor" title="Edit AutoTimer" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRGYB"/>
+		<ePixmap position="610,90" size="15,480" pixmap="buttons/maxbar.png" zPosition="4" alphatest="blend"/>
+		<widget name="config" position="40,90" size="585,480" itemHeight="30" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall"/>
+		<widget source="help" render="Label" position="680,520" size="560,140" transparent="1" font="Regular;20" halign="center" foregroundColor="#73c6ff" backgroundColor="bkwall"/>
+		<!-- eLabel name="DEBUG" text="PANEL P010" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoTimer Filter Editor -->
+	<screen name="AutoTimerFilterEditor" title="Edit AutoTimer Filters" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRGYB"/>
+		<widget name="config" position="40,90" size="585,480" itemHeight="30" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall"/>
+		<!-- eLabel name="DEBUG" text="PANEL P011" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- MPHelp -->
+	<screen name="MPHelp" title="MP Help" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRYB"/>
+		<widget render="Label" source="title" position="40,80" size="585,50" font="Regular;24" zPosition="5" valign="center" halign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="detailtext" position="40,150" size="585,400" font="Regular;22" halign="center" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="870,500" size="300,300" pixmap="menu/info.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P012" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** AutoBouquetsMaker ********** -->
+	<!-- AutoBouquetsMaker Config -->
+	<screen name="AutoBouquetsMaker_Setup" title="AutoBouquet Maker Setup" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/>
+		<widget name="config" position="40,80" size="585,230" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="description" position="40,350" size="585,400" font="Regular;20" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="pleasewait" position="40,80" size="585,230" font="Regular;32" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="2"/>
+		<!-- eLabel name="DEBUG" text="PANEL P013" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoBouquetsMaker Menu -->
+	<screen name="AutoBouquetsMaker_Menu" title="AutoBouquet Maker Menu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="fakeExit"/>
+		<widget source="list" render="Listbox" position="40,90" size="585,360" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (12, 4), size = (0, 0), png = 0),
+					MultiContentEntryText(pos = (5, 5), size = (580, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P014" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoBouquetsMaker Config Providers -->
+	<screen name="AutoBouquetsMaker_ProvidersSetup" title="AutoBouquet Maker Config" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/>
+		<widget name="config" position="40,80" size="585,400" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="description" position="40,400" size="585,200" font="Regular;20" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="pleasewait" position="40,80" size="585,230" font="Regular;32" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="2"/>
+		<!-- eLabel name="DEBUG" text="PANEL P015" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoBouquetsMaker Hide Selection -->
+	<screen name="AutoBouquetsMaker_HideSections" title="AutoBouquet Maker Hide" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/>
+		<widget source="list" render="Listbox" position="40,90" size="585,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (10, 0), size = (0, 0), png = 0),
+					MultiContentEntryText(pos = (5, 0), size = (440, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (455, 0), size = (130, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 30
+				}
+			</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P016" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<!-- AutoBouquetsMaker Ordering -->
+	<screen name="AutoBouquetsMaker_Ordering" title="AutoBouquet Maker Ordering" position="center,center" size="600,500">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<widget source="list" render="Listbox" position="40,90" size="585,360" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (12, 1), size = (440, 32), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 30
+				}
+			</convert>
+		</widget>
+		<widget name="pleasewait" position="40,90" size="585,140" font="Regular;18" halign="center" valign="center" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P017" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoBouquetsMaker Logs -->
+	<screen name="AutoBouquetsMaker_Log" title="Backup Log" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="fakeExit"/>
+		<widget name="list" position="40,90" size="585,500" font="Regular;16" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P018" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- AutoBouquetsMaker About -->
+	<screen name="AutoBouquetsMaker_About" title="AutoBouquets Maker About" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nR"/>
+		<widget name="about" position="40,90" size="585,500" font="Regular;20" backgroundColor="bkwall" transparent="1"/>
+		<widget name="oealogo" position="240,470" size="200,135" zPosition="4" transparent="1" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P019" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** Picture Player ********** -->
+
+	<screen name="Pic_Setup" title="PictirePlayer Settings" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/>
+		<widget name="config" position="40,90" size="585,510" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap pixmap="buttons/maxbar.png" position="610,90" size="15,510" zPosition="2" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P020" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="picshow" title="PictirePlayer Show" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRGY"/>
+		<panel name="KeyMenuTemplate"/>
+		<widget name="filelist" position="40,90" size="585,510" itemHeight="30" zPosition="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap pixmap="buttons/maxbar.png" position="610,90" size="15,510" zPosition="2" alphatest="blend"/>
+		<eLabel position="675,60" size="550,300" backgroundColor="#ffffff" zPosition="0"/>
+		<widget name="thn" position="667,62" size="546,296" alphatest="on" zPosition="1"/>
+		<widget name="label" position="680,580" size="560,25" font="Regular;22" backgroundColor="bkwall" transparent="1" zPosition="2"/>
+		<!-- eLabel name="DEBUG" text="PANEL P021" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="Pic_Exif" title="PictirePlayer Exif" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sR"/>
+		<ePixmap pixmap="buttons/maxbar.png" position="610,90" size="15,510" zPosition="2" alphatest="blend"/>
+		<widget source="menu" render="Listbox" position="40,90" size="585,490" selectionDisabled="1" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [ 
+					MultiContentEntryText(pos = (5,7),size = (250,30),flags = RT_HALIGN_LEFT,text = 0),
+					MultiContentEntryText(pos = (260,7),size = (430,30),flags = RT_HALIGN_LEFT,text = 1)],
+					"fonts": [gFont("Regular",20)],
+					"itemHeight": 35 
+				}
+			</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P022" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="Pic_Full_View" title="PictirePlayer FullView" position="fill" flags="wfNoBorder">
+		<eLabel position="0,0" zPosition="0" size="1280,720" backgroundColor="black"/>
+		<widget name="pic" position="fill" zPosition="1" alphatest="on"/>
+		<eLabel position="25,25" size="30,25" zPosition="2" backgroundColor="black" transparent="1"/>
+		<widget name="point" position="27,27" size="21,21" zPosition="3" pixmap="skin_default/icons/epgclock.png" alphatest="on"/>
+		<widget name="play_icon" position="30,30" size="16,16" zPosition="3" pixmap="skin_default/icons/ico_mp_play.png" alphatest="on"/>
+		<widget source="file" render="Label" position="70,25" size="600,25" zPosition="3" font="Regular;22" halign="left" noWrap="1" foregroundColor="foreground" backgroundColor="black" transparent="1" borderWidth="2"/>
+		<!-- eLabel name="DEBUG" text="PANEL P023" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** HDMI-CEC Setup ********** -->
+	
+	<screen name="HdmiCECSetupScreen" title="HDMI-CEC Setup" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRGYB"/>
+		<widget name="config" position="40,80" size="585,510" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget source="current_address" render="Label" position="40,580" size="585,30" zPosition="10" font="Regular;21" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget source="fixed_address" render="Label" position="680,30" size="540,30" zPosition="10" font="Regular;21" halign="center" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="890,480" size="300,300" pixmap="menu/hdmi.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P024" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** OpenWeb-If Config ********** -->
+
+	<screen name="OpenWebifConfig" position="fill" title="OpenWebif Configuration" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/>
+		<widget name="lab1" position="40,90" size="585,60" zPosition="1" font="Regular;24" valign="top" transparent="1"/>
+		<widget name="config" position="40,150" size="585,240" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+	</screen>
+
+	<!-- ********** Micom Firmware Upgrade ********** -->
+		
+	<screen name="Filebrowser" position="fill" title="File Browser" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="file_list" position="40,90" size="585,525" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget source="status" render="Label" position="640,0" zPosition="5" size="585,75" font="Regular;18" halign="center" valign="center" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="890,480" size="300,300" pixmap="menu/a4y.png" alphatest="blend"/>
+		<ePixmap pixmap="buttons/yellow.png" position="60,660" size="20,25" alphatest="blend"/>
+		<ePixmap pixmap="buttons/blue.png" position="310,660" size="20,25" alphatest="blend"/>
+		<widget source="key_yellow" render="Label" position="90,658" size="150,28" backgroundColor="bkwall" zPosition="1" transparent="1" font="Regular;20" halign="left"/>
+		<widget source="key_blue" render="Label" position="340,657" size="250,28" backgroundColor="bkwall" zPosition="1" transparent="1" font="Regular;22" halign="left"/>
+	</screen>
+
+	<screen name="FirmwareUpgrade" position="fill" title="Firmware Upgrade" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRG"/>
+		<widget name="oldversion_label" position="40,90" size="300,25" font="Regular;22" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="oldversion" position="320,90" size="100,25" font="Regular;22" backgroundColor="bkwall" transparent="1"/>
+		<widget name="newversion_label" position="40,130" size="300,25" font="Regular;22" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="newversion" position="320,130" size="100,25" font="Regular;22" backgroundColor="bkwall" transparent="1"/>
+		<widget source="status" render="Label" position="40,550" size="580,75" font="Regular;22" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="890,480" size="300,300" pixmap="menu/a4y.png" alphatest="blend"/>
+	</screen>
+ 
+	<!-- ********** CrossEPG ********** -->
+
+	<!-- Cross EPG SETUP -->
+	<screen title="CrossEPG Setup" name="CrossEPG_Setup" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="nRG"/>
+		<widget name="config" position="40,90" size="585,300" font="Regular;22" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="information" position="680,340" size="540,300" halign="center" valign="center" font="Regular;22" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P024" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- Cross EPG Menu -->
+	<screen title="CrossEPG Menu" name="CrossEPG_Menu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="fakeExit"/>
+		<ePixmap pixmap="buttons/maxbar.png" position="610,90" size="15,490" zPosition="2" alphatest="blend"/>
+		<widget source="list" render="Listbox" position="40,90" size="585,490" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (35, 35), png = 0),
+					MultiContentEntryText(pos = (50, 6), size = (530, 34), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+				],
+				"fonts": [gFont("Regular", 22)],
+				"itemHeight": 35
+				}
+			</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P026" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- Cross EPG Info -->
+	<screen title="CrossEPG Info" name="CrossEPG_Info" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nR"/>
+		<widget name="version" position="40,90" size="585,25" font="Regular;24" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="create" position="40,163" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="last_update" position="40,193" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="headersdb_size" position="40,223" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="descriptorsdb_size" position="40,253" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="indexesdb_size" position="40,283" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="aliasesdb_size" position="40,313" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="total_size" position="40,343" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="channels_count" position="40,373" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="events_count" position="40,403" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="hashes_count" position="40,433" size="585,25" font="Regular;22" foregroundColor="#ffffff" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P027" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- Cross Extra -->
+	<screen name="CrossEPG_Extra" title="CrossEPG Extra" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<ePixmap pixmap="buttons/maxbar.png" position="610,90" size="15,500" zPosition="2" alphatest="blend"/>
+		<widget name="menu" position="40,90" size="585,500" font="Regular;22" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P028" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- Cross Providers -->
+	<screen name="CrossEPG_Providers" title="CrossEPG Providers" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGY"/>
+		<ePixmap pixmap="buttons/maxbar.png" position="610,90" size="15,490" zPosition="2" alphatest="blend"/>
+		<widget source="list" render="Listbox" position="40,90" size="585,490" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (5, 5), size = (515, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+					MultiContentEntryPixmapAlphaTest(pos = (535, 1), size = (35, 35), png = 1),
+					],
+					"fonts": [gFont("Regular", 20)],
+					"itemHeight": 35
+				}
+			</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P029" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- Cross About -->
+	<screen name="CrossEPG_About" title="About CrossEPG" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nR"/>
+		<widget name="about" position="40,90" size="585,510" font="Regular;18" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="rytec_pix" position="45,530" size="0,70" alphatest="blend"/>
+		<widget name="krkadoni_pix" position="150,530" size="0,22" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P030" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- Cross Ordering -->
+	<screen name="CrossEPG_Ordering" title="Cross EPG - Providers start order" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<ePixmap pixmap="buttons/maxbar.png" position="610,90" size="15,490" zPosition="2" alphatest="blend"/>
+		<widget source="list" render="Listbox" position="40,90" size="585,490" font="Regular;22" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+				MultiContentEntryText(pos = (5, 5), size = (515, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+				MultiContentEntryPixmapAlphaTest(pos = (535, 1), size = (35, 35), png = 1),
+				],
+				"fonts": [gFont("Regular", 20)],
+				"itemHeight": 35
+				}
+			</convert>
+		</widget>
+		<!-- eLabel name="DEBUG" text="PANEL P031" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** EPG Import ********** -->
+
+	<!-- EPG Import Configuration -->
+	<screen name="EPGImportConfig" title="EPG Import Configuration" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/> 
+		<panel name="KeyInfoTemplate"/>
+		<widget name="config" position="40,90" size="585,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="status" position="680,420" size="560,60" font="Regular;20"/>
+		<widget name="statusbar" position="680,560" size="560,20" font="Regular;18"/>
+		<!-- eLabel name="DEBUG" text="PANEL P032" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- EPG Import Sources -->
+	<screen name="EPGImportSources" title="EPG Import Sources" position="fill" flags="wfNoBorder">
+		<panel name="PigTemplate"/>
+		<panel name="nRG"/>
+		<widget name="list" selectionPixmap="buttons/listselect.png" position="40,90" size="585,510" scrollbarMode="showOnDemand" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P033" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- EPG Import Log -->
+	<screen name="EPGImportLog" position="fill" title="EPG Import Log" flags="wfNoBorder">
+		<panel name="PigTemplate"/>
+		<panel name="nRB"/>
+		<widget name="list" position="40,90" size="585,510" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P034" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** IMDB ********** -->
+
+	<screen name="IMDB" position="fill" title="Internet Movie Database Details Plugin" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/> 
+		<widget name="statusbar" position="40,80" size="585,26" font="Regular;22" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="40,130" size="96,160" pixmap="menu/imdb.png" zPosition="1" alphatest="blend"/>
+		<widget name="poster" position="40,130" size="96,160" alphatest="on" zPosition="2"/>
+		<widget name="detailslabel" position="150,130" size="475,160" font="Regular;18" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="610,330" size="15,275" pixmap="buttons/maxbar.png" zPosition="4" alphatest="blend"/>
+		<widget name="menu" position="40,330" size="585,275" zPosition="3" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="castlabel" position="40,330" size="585,300" font="Regular;20" backgroundColor="bkwall" transparent="1"/>
+		<widget name="extralabel" position="40,330" size="585,300" font="Regular;18" backgroundColor="bkwall" transparent="1"/>
+		<widget name="ratinglabel" position="40,300" size="250,20" font="Regular;18" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="starsbg" position="340,297" size="170,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_empty.png" zPosition="0" transparent="1" alphatest="on"/>
+		<widget name="stars" position="340,297" size="170,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_filled.png" zPosition="1" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P035" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="IMDbLCDScreen" position="0,0" size="132,64" title="IMDB Plugin">
+		<widget name="headline" position="4,0" size="128,22" font="Regular;20"/>
+		<widget source="parent.title" render="Label" position="6,26" size="120,34" font="Regular;14"/>
+		<!-- eLabel name="DEBUG" text="PANEL P036" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** PartnerBox ********** -->
+
+	<screen name="PartnerboxSetup" title="PartnerBox Setup" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGY"/> 
+		<eLabel text="PartnerBox Setup" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="config" position="40,90" size="585,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P037" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="CurrentRemoteTV" title="Current Remote Tv" position="fill" flags="wfNoBorder"> <!--remote info -->
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<eLabel text="PartnerBox Remote TV" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<eLabel text="Remote Player" position="40,90" size="885,55" font="Regular;24" valign="center" halign="left" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P038" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="PartnerboxEntryConfigScreen" title="PartnerBox Config screen" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="KeyTextTemplate"/>
+		<panel name="nRG"/> 
+		<eLabel text="PartnerBox Config Entry" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="config" position="40,90" size="585,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="85,420" zPosition="1" size="1,1" transparent="1" alphatest="on"/>
+		<!-- eLabel name="DEBUG" text="PANEL P039" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="PartnerboxEntriesListConfigScreen" title="PartnerBox List Config" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/> 
+		<eLabel text="PartnerBox List Config" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="name" position="40,90" size="585,28" font="Regular;26" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<widget name="ip" position="40,140" size="200,24" font="Regular;20" halign="left" backgroundColor="bkwall" transparent="1"/>
+		<widget name="port" position="280,140" size="100,24" font="Regular;20" halign="left" backgroundColor="bkwall" transparent="1"/>
+		<widget name="type" position="40,180" size="580,24" font="Regular;20" halign="left" backgroundColor="bkwall" transparent="1"/>
+		<widget name="entrylist" position="40,210" size="585,300" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P040" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="RemotePlayer" title="Partnerbox - RemotePlayer" position="283,102" size="720,576" backgroundColor="#FFFFFFFF" flags="wfNoBorder">
+		<ePixmap position="41,388" zPosition="-1" size="630,130" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/ExPlayer.png" alphatest="off" transparent="1"/>
+		<eLabel text="PartnerBox Remote Player" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="ServiceName" zPosition="1" position="50,404" size="610,59" valign="center" halign="center" font="Regular;21" foregroundColor="#F0F0F0" backgroundColor="#302C2C39"/>
+		<widget name="DateTime" zPosition="1" position="52,473" size="500,30" halign="left" font="Regular;16" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1"/>
+		<widget name="IP" zPosition="2" position="361,473" size="300,30" halign="right" font="Regular;16" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P041" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="RemoteTimerBouquetList" title="Remote Timer List" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<eLabel text="PartnerBox Remote Timer List" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="text" position="40,90" size="585,510" font="Regular;26" halign="center" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1" />
+		<widget name="bouquetlist" position="40,90" size="585,510" font="Regular;26" zPosition="2" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P042" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="RemoteTimer" title="Remote Timer" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/> 
+		<eLabel text="PartnerBox Timer" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="text" position="40,90" size="585,510" font="Regular;26" halign="center" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1" />
+		<widget name="timerlist" position="40,90" size="585,510" font="Regular;26" zPosition="2" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P043" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="RemoteTimerEPGList" title="Remote Timer EPG" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/> 
+		<eLabel text="PartnerBox Remote EPG" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="text" position="40,90" size="585,510" font="Regular;26" halign="center" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1" />
+		<widget name="epglist" position="40,90" size="585,510" font="Regular;26" zPosition="2" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P044" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="RemoteTimerChannelList" title="Remote Channel List" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/> 
+		<eLabel text="PartnerBox Remote Channel" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="text" position="40,90" size="585,510" font="Regular;26" halign="center" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1" />
+		<widget name="channellist" position="40,90" size="585,510" font="Regular;26" zPosition="2" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P045" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="RemoteTimerEventView" title="Remote Timer Event" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<eLabel text="PartnerBox Remote Event" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="channel" position="590,110" size="300,30" font="Regular;22"/>
+		<widget name="datetime" position="900,110" size="150,30" font="Regular;22"/>
+		<widget name="duration" position="1050,110" size="150,30" font="Regular;22"/>
+		<widget name="epg_description" position="590,160" size="600,384" font="Regular;22"/>
+		<!-- eLabel name="DEBUG" text="PANEL P046" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="RemoteTimerEntry" title="Remote Timer Entry" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="CancelOkTemplate"/>
+		<eLabel text="PartnerBox Remote Timer Entry" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="config" position="40,90" size="585,420" itemHeight="28" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P047" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** VLC Player ********** -->
+
+	<screen name="VlcServerConfigScreen" title="VLC Server Config" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/> 
+		<eLabel text="VLC Player Config" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="config" position="40,90" size="585,510" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="660,300" zPosition="1" size="1,1" transparent="1" alphatest="on"/>
+		<widget source="VKeyIcon" render="Pixmap" pixmap="buttons/key_text.png" position="660,510" zPosition="1" size="60,25" transparent="1" alphatest="on">
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<ePixmap position="990,520" size="300,300" pixmap="menu/vlc.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P048" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="VlcServerListScreen" title="VLC Server List" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<eLabel text="VLC ListScreen" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="serverlabel" position="40,90" size="585,36" font="Regular;18" backgroundColor="bkwall" transparent="1"/>
+		<widget name="serverlist" position="40,150" size="585,330" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="990,520" size="300,300" pixmap="menu/vlc.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P049" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="VlcMediaListScreen" title="Select a VLC-Server Profile" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<eLabel text="VLC MediaList" position="40,30" size="580,30" font="mediamenu;26" halign="center" foregroundColor="#808080" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="filelist_button_sel" position="40,90" size="210,40" pixmap="skin_default/epg_now.png" zPosition="1" alphatest="on"/>
+		<widget name="playlist_button_sel" position="40,90" size="210,40" pixmap="skin_default/epg_next.png" zPosition="1" alphatest="on"/>
+		<widget name="filelist_text" position="40,90" size="110,25" font="Regular;18" valign="center" halign="center" foregroundColor="bluette" backgroundColor="bkwall" transparent="1" zPosition="2"/>
+		<widget name="playlist_text" position="140,90" size="110,25" font="Regular;18" valign="center" halign="center" foregroundColor="bluette" backgroundColor="bkwall" transparent="1" zPosition="2"/>
+		<widget name="server_name" position="270,90" size="200,25" backgroundColor="bkwall" transparent="1" zPosition="1" font="Regular;22" valign="center" halign="left"/>
+		<widget name="current_dir" position="40,130" size="585,25" backgroundColor="bkwall" transparent="1" zPosition="1" font="Regular;22" valign="center" halign="left"/>
+		<widget name="filelist" position="40,170" size="585,420" itemHeight="28" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png"/>
+		<widget name="playlist" position="40,170" size="585,420" itemHeight="28" scrollbarMode="showOnDemand" zPosition="2" selectionPixmap="buttons/listselect.png" halign="left"/>
+		<ePixmap position="990,520" size="300,300" pixmap="menu/vlc.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P050" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- ********** Cron Manager ********** -->
+ 
+ <screen name="CronTimersConfig" title="Cronmanager Menu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<widget name="menu" position="40,90" size="585,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="920,520" size="300,90" pixmap="menu/cron.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P051" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+ </screen>
+
+ <screen name="CronTimers" title="Cronmanager Menu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+ 		<widget name="lab1" position="40,90" size="200,28" font="Regular;24" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+ 		<widget name="labactive" position="280,90" size="200,28" font="Regular;24" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="green" zPosition="1"/>
+ 		<widget name="labdisabled" position="280,90" size="200,28" font="Regular;24" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="red" zPosition="1"/>
+ 		<widget name="lab2" position="40,140" size="200,28" font="Regular;24" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+ 		<widget name="labstop" position="280,140" size="120,28" font="Regular;24" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+ 		<widget name="labrun" position="280,140" size="200,28" font="Regular;24" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="green" zPosition="1"/>
+ 		<widget name="labactive" position="280,140" size="200,28" font="Regular;24" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="red" zPosition="1"/>
+ 		<widget name="key" position="40, 500" size="580,80" font="Regular;18" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1"/>
+		<ePixmap position="920,520" size="300,90" pixmap="menu/cron.png" alphatest="blend"/>
+		<!-- eLabel name="DEBUG" text="PANEL P052" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+ </screen>
+
+	<!-- ********** Transcoding Setup ********** -->
+	
+	<screen name="TranscodingSetup" title="Transcoding Setup" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRG"/>
+		<widget name="config" position="40,90" font="Regular;20" size="580,360" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="description" position="40,290" size="585,400" font="Regular;22" halign="left" valign="center" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+		<widget name="text" position="40,360" size="580,230" font="Regular;22" backgroundColor="bkwall" transparent="1" zPosition="1"/>
+	</screen>
+	
+	<!-- ********** CCcam Info ********** -->
+
+	<screen name="CCcamInfoMain" title="CCCamInfo MainMenu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="menu" position="40,90" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P053" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="CCcamInfoEcmInfoSelection" title="CCcamInfo ECMInfo" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="list" title="CCcamInfo ECMInfo Selection" position="40,90" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P054" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="CCcamInfoInfoScreen" title="CCcamInfo InfoScreen" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="text" position="40,90" size="585,510" font="Console;17" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P055" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="CCcamShareViewMenu" title="CCcamInfo Client Info" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<widget name="list" position="40,80" size="585,370" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="uphops" position="680,400" size="240,25" font="Regular;20" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="cards" position="930,400" size="220,25" font="Regular;20" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="providers" position="680,440" size="240,25" font="Regular;20" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="reshare" position="930,570" size="220,25" font="Regular;20" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="title" position="50,600" size="480,20" halign="center" font="Regular;20" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P056" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<screen name="CCcamInfoSubMenu" title="CCcamInfo SubMenu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<widget name="list" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="info" position="680,380" size="540,200" font="Regular;20" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P057" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="CCcamInfoServerMenu" title="CCcamInfo ServerMenu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<widget name="list" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="info" position="680,380" size="540,200" font="Regular;20" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P058" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="CCcamInfoConfigMenu" title="CCcamInfo Config" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="config" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P059" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="CCcamInfoRemoteBoxMenu" title="CCcamInfo Info RemoteBox" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<widget name="list" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P060" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="CCcamInfoShareInfo" title="CCcamInfo ShareInfo" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<widget name="list" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P061" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="CCcamInfoConfigSwitcher" title="CCcamInfo ConfigSwitcher" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGYB"/>
+		<widget name="list" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P062" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="CCcamInfoMenuConfig" title="CCcamInfo Config" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRGY"/>
+		<widget name="list" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P063" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<!-- ********** OScam Info ********** -->
+		
+	<screen name="OscamInfoMenu" title="OScamInfo Menu" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="mainmenu" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P064" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="oscECMInfo" title="OScamInfo ECMInfo" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="output" position="40,80" size="585,510" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P065" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+	
+	<screen name="OscamInfoConfigScreen" title="OScamInfo Config" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/>
+		<widget name="config" position="40,80" size="585,300" scrollbarMode="showOnDemand" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<widget name="status" position="40,330" size="585,240" foregroundColor="bluette" backgroundColor="bkwall" transparent="1"/>
+		<!-- eLabel name="DEBUG" text="PANEL P066" position="200,400" size="300,60" font="Regular;40" foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- PermanentClock -->
+	<screen name="PermanentClockMenu" position="0,0" size="1280,720" flags="wfNoBorder" title="Permanent Clock">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<widget name="list" font="Regular;22" position="40,80" size="585,300" transparent="1" foregroundColor="grey"/>
+		<ePixmap pixmap="buttons/key-exit.png" alphatest="on" position="310,660" size="70,30"/>
+		<eLabel text="Cancel" foregroundColor="grey" backgroundColor="secondBG" font="Regular;22" halign="left" position="385,660" size="220,26" transparent="1" zPosition="1"/>
+		<ePixmap pixmap="buttons/key_ok.png" alphatest="on" position="60,660" size="35,26"/>
+		<eLabel text="Accept" foregroundColor="grey" backgroundColor="secondBG" font="Regular;22" halign="left" position="100,660" size="220,26" transparent="1" zPosition="1"/>
+	</screen>
+	<screen name="PermanentClockScreen" position="0,0" size="120,30" zPosition="-1" backgroundColor="transparent" title="%s" flags="wfNoBorder">
+		<widget source="global.CurrentTime" render="Label" position="1,1" size="120,30" backgroundColor="transparent" transparent="1" zPosition="0" foregroundColor="grey" borderWidth="2" font="Regular;26" borderColor="black" valign="center" halign="center">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+	</screen>
+
+	<!-- Bluetooth Devices Manager -->
+	<screen name="BluetoothDevicesManager" title="Bluetooth Devices Manager" position="fill" flags="wfNoBorder">
+		<panel name="WallTemplate"/>
+		<panel name="PigTemplate"/>
+		<panel name="ClockTemplate"/>
+		<panel name="sRGYB"/>
+		<widget name="devicelist" position="40,90" size="560,500" scrollbarMode="showOnDemand" selectionPixmap="buttons/listselect.png" backgroundColor="bkwall" transparent="1"/>
+		<widget name="ConnStatus" position="680,520" size="560,140" font="Regular;24" backgroundColor="bkwall" transparent="1"/>
+	</screen>
+	
+	<!-- SoftCamPanel -->
+	<screen name="SoftCamPanel" title="Softcam Panel" position="0,0" size="1280,720" flags="wfNoBorder" >
+		<panel name="WallTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ClockTemplate"/>
+		<panel name="nRGB"/>
+		<!-- Ico Crypt -->
+		<ePixmap pixmap="infobar/cryptoff_ico.png" position="45,80" size="17,25" zPosition="1" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" pixmap="infobar/crypton_ico.png" position="45,80" size="17,25" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget name="cam"    zPosition="2" position="677,540" size="580,24" font="Regular; 22" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" />
+		<widget name="server" zPosition="2" position="677,570" size="580,24" font="Regular; 22" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" />
+		<widget name="entries" position="40,140" size="585,300" transparent="1" />
+		<!-- Emu Info  -->
+		<eLabel text="EMU :" position="40,440" size="60,24" font="Regular;20" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1" />
+ 		<widget source="session.CurrentService" render="Label" text="Emu Info" position="135,440" size="250,34" font="Regular;20" valign="top" halign="left" foregroundColor="foreground" backgroundColor="bkwall" transparent="1" zPosition="10" >
+			<convert type="PliExtraInfo">EmuInfoCrypt</convert>
+		</widget>
+		<!-- Ico Crypt -->
+		<ePixmap pixmap="infobar/ico_crypt_off.png" position="102,444" size="21,15" zPosition="0" alphatest="blend" />
+		<widget source="session.CurrentService" render="Pixmap" pixmap="infobar/ico_crypt_on.png" position="102,444" size="21,15" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- Sat Freq Info  -->
+ 		<widget source="session.CurrentService" render="Label" text="Emu Info" position="40,480" size="250,24" font="Regular;20" valign="top" halign="left" foregroundColor="bluette" backgroundColor="bkwall" transparent="1" zPosition="10" >
+			<convert type="PliExtraInfo">EmuInfoCryptSpecial</convert>
+		</widget>
+		<!-- Share Info -->
+		<eLabel text="SERVER :" position="40,530" size="150,24" font="Regular;20" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" zPosition="1" />
+		<widget source="session.CurrentService" render="Label" position="40,540" size="580,60" font="Regular;20" valign="center" halign="left" foregroundColor="#007983b5" backgroundColor="bkwall" transparent="1" zPosition="5" >
+			<convert type="CryptoInfo">VerboseInfo</convert>
+		</widget>
+		<!-- eLabel name="DEBUG"  text="PANEL S109" position="200,400" size="300,60" font="Regular;40"  foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+	<!-- SoftCamPanel Package List -->
+	<screen name="SoftCamPackages" title="Install SoftCams" position="0,0" size="1280,720" flags="wfNoBorder" >
+		<panel name="WallTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ClockTemplate"/>
+		<panel name="nRG"/>
+		<widget source="list" render="Listbox" position="7,100" size="620,500" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+							MultiContentEntryText(pos = (7, 1), size = (540, 28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+							MultiContentEntryText(pos = (7, 26), size = (540, 20), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+							MultiContentEntryPixmapAlphaTest(pos = (545, 2), size = (48, 48), png = 4), # index 4 is the status pixmap
+							MultiContentEntryPixmapAlphaTest(pos = (7, 50), size = (510, 2), png = 5), # index 4 is the div pixmap
+						],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 14)],
+				"itemHeight": 52
+				}
+			</convert>
+		</widget>
+		<widget source="key_ok" render="Label" zPosition="2" position="677,570" size="580,24" font="Regular; 22" halign="left" foregroundColor="#73c6ff" backgroundColor="bkwall" transparent="1" />
+		<!-- eLabel name="DEBUG"  text="PANEL S109" position="200,400" size="300,60" font="Regular;40"  foregroundColor="red" backgroundColor="#10202020" transparent="1" zPosition="90"/-->
+	</screen>
+
+</skin>

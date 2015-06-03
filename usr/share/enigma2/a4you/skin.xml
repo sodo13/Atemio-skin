@@ -1,0 +1,97 @@
+<skin>
+	<!--	Skin: a4you Vs 1.12	-->
+	<!--	This skin is part of the standard Atemio-skin; the same license applies.	-->
+	<output id="0">
+		<resolution bpp="32" xres="1280" yres="720" />
+	</output>
+	<!-- External Files -->
+	<include filename="/usr/share/enigma2/a4you/skin_a4you.xml"/>
+	<include filename="/usr/share/enigma2/a4you/skin_templates.xml"/>
+	<include filename="/usr/share/enigma2/a4you/skin_plugins.xml"/>
+	<include filename="/usr/share/enigma2/a4you/skin_wizard.xml"/>
+	<include filename="/usr/share/enigma2/a4you/skin_nopanel.xml"/>
+
+	<!-- Fonts -->
+	 <fonts>
+		<font name="xRegular" filename="nmsbd.ttf" scale="100"/>
+		<font name="LCD" filename="lcd.ttf" scale="100"/>
+		<font name="Console" filename="tuxtxt.ttf" scale="100"/>
+		<font name="Fixed" filename="andale.ttf" scale="100"/>
+		<font name="Regular" filename="verdana_r.ttf" 	 scale="93"/>
+		<font name="mediamenu" filename="msmenu.ttf" 	 scale="93"/>
+	</fonts>
+
+	<!-- Colors --> 
+	<colors> 
+		<color name="background" value="#00000000"/>
+		<color name="bkwall" value="#00272e43"/>
+		<color name="bkblue" value="#00162b49"/>
+		<color name="bkinfobar" value="#00204372"/>
+		<color name="bluette" value="#0073c6ff"/>
+		<color name="black" value="#00000000"/>
+		<color name="blue" value="#00879ce1"/>
+		<color name="bluetransparent" value="#08001e4b"/>
+		<color name="dark" value="#00242424"/>
+		<color name="darkgrey" value="#00555556"/>
+		<color name="foreground" value="#00f0f0f0"/>
+		<color name="green" value="#0056c856"/>
+		<color name="greentransparent" value="#08004c00"/>
+		<color name="grey" value="#00aaaaaa"/>
+		<color name="infobarBG" value="#41080808"/>
+		<color name="listbox" value="#000f56a4"/>
+		<color name="noTransBG" value="#00101214"/>
+		<color name="orange" value="#00ffc000"/>
+		<color name="rds_text_bg" value="#00003258"/>
+		<color name="red" value="#00ff4a3c"/>
+		<color name="redtransparent" value="#084c0000"/>
+		<color name="rssviewtop" value="#00005050"/>
+		<color name="secondBG" value="#18101214"/>
+		<color name="secondFG" value="#00fcc000"/>
+		<color name="selectedBG" value="#06303240"/>
+		<color name="selectedFG" value="#00fcc000"/>
+		<color name="transparent" value="#ff000000"/>
+		<color name="transpBlack" value="#54111112"/>
+		<color name="transpWhite" value="#70f0f0f0"/>
+		<color name="un33333a" value="#0033333a"/>
+		<color name="un40a0aa0" value="#040a0aa0"/>
+		<color name="un4a00a0a" value="#04a00a0a"/>
+		<color name="uncccccc" value="#00cccccc"/>
+		<color name="white" value="#00f0f0f0"/>
+		<color name="yellow" value="#00ffc000"/>
+		<color name="yellowtransparent" value="#084b4b00"/>
+		<color name="backpurple" value="#4D5375"/>
+	</colors>
+
+	<!-- Main screen colors (id=0 Framebuffer) -->
+	<windowstyle type="skinned" id="0">
+		<title offset="20,3" font="Regular;24"/>
+		<color name="WindowTitleForeground" color="#73c6ff"/>
+		<color name="WindowTitleBackground" color="#4D5375"/> 
+		<color name="Background" color="#10000000"/>
+		<color name="LabelForeground" color="#ffffff"/>
+		<color name="ListboxBackground" color="#10000000"/>
+		<color name="ListboxForeground" color="#ffffff"/>
+		<color name="ListboxSelectedBackground" color="#1077c6ff"/>
+		<color name="ListboxSelectedForeground" color="#000000"/>
+		<color name="ListboxMarkedBackground" color="#1077c6ff"/>
+		<color name="ListboxMarkedForeground" color="#00ff00"/>
+		<color name="ListboxMarkedAndSelectedBackground" color="#1077c6ff"/>
+		<color name="ListboxMarkedAndSelectedForeground" color="#00ff00"/>
+		<!-- screen border png's -->
+		<borderset name="bsWindow">
+			<pixmap filename="a4you/window/top_left_corner.png" pos="bpTopLeft"/>
+			<pixmap filename="a4you/window/top_edge.png" pos="bpTop"/>
+			<pixmap filename="a4you/window/top_right_corner.png" pos="bpTopRight"/>
+			<pixmap filename="a4you/window/left_edge.png" pos="bpLeft"/>
+			<pixmap filename="a4you/window/right_edge.png" pos="bpRight"/>
+			<pixmap filename="a4you/window/bottom_left_corner.png" pos="bpBottomLeft"/>
+			<pixmap filename="a4you/window/bottom_edge.png" pos="bpBottom"/>
+			<pixmap filename="a4you/window/bottom_right_corner.png" pos="bpBottomRight"/>
+		</borderset>
+		<borderset name="bsListboxEntry">
+			<pixmap filename="a4you/infobar/line.png" pos="bpTop"/>
+			<pixmap filename="a4you/infobar/line.png" pos="bpBottom"/>
+		</borderset>
+	</windowstyle>
+
+</skin>
